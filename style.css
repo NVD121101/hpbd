@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff8488, #f8c5b7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Pacifico', cursive;
+    overflow: hidden;
+    position: relative;
+}
+
+.all{
+    background: #e8e8e8;
+    height: 100vh;
+    width: 100vw;
+    background-image: url('./assets/vy.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: auto;
+}
+
+.greeting-card{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+}
+.greeting-card h1 {
+    font-size: 2rem;
+}
+
+.greeting-card img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.greeting-card img:hover {
+  transform: scale(1.2); 
+}
+
+
+.gradient-text span{
+  font-weight: bold;
+  background: linear-gradient(45deg, #FDBB2D, #22C1C3); /* màu chuyển sắc */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* CSS */
+.button-87 {
+  margin: 10px;
+  padding: 10px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(45deg, #FF512F 0%, #22C1C3  51%, #FDBB2D  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-87:hover {
+  background-position: right center;
+  color: #fff;  
+  text-decoration: none;
+}
+
+.button-87:active {
+  transform: scale(0.95);
+}
+
+
+/* main */
+.lettre {
+  width: 700px;
+  height: 350px;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: 'Pacifico', cursive;
+  border-radius: 20px;
+  background-color: #FDB9B4;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.lettre .title{
+  font-size: 1.3em;
+  margin-top: 30px;
+}
+
+.lettre .description {
+  width: 100%;
+  font-size: 1.1em;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
