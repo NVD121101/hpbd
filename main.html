@@ -9,14 +9,59 @@
 <body>
     <div class="lettre">
         <div class="title">
-            <h1>🎉<span>Chúc mừng sinh nhật vợ yêu!</span>🎂</h1>
+            <h1>
+                <span>🎉 Chúc</span> 
+                <span>mừng</span> 
+                <span>sinh</span> 
+                <span>nhật</span> 
+                <span>vợ</span> 
+                <span>yêu! 🎂</span>
+            </h1>
         </div>
         <div class="description">
-            <span>Chúc Vợ tuổi mới thật nhiều niềm vui, sức khỏe và thành công! 🙌</span>
+            <span>Chúc Vợ tuổi mới thật nhiều niềm vui và sức khỏe! 🙌</span>
             <span>Mong em có một ngày sinh nhật vui vẻ. 🥳</span>
             <span>Anh không có tiền để mua quà đâu, anh chỉ có lời chúc này thôi. 😂</span>
             <span>Còn nếu em muốn có quà thì mang tiền đây anh đi mua cho. 🎁</span>
+            <img src="./assets/dancing-cat-dance.gif" alt="gif">
         </div>
     </div>
+    <div class="emoji">
+        <span>🩷</span>
+        <span>🎈</span>
+        <span>🎂</span>
+        <span>🥳</span>
+        <span>🧁</span>
+        <span>🕯️</span>
+        <span>🎉</span>
+    </div>
+    <audio id="birthdayMusic" src="./assets/hpbd.mp3" loop autoplay></audio>
+
+    <script>
+        const emojis = ['🩷', '🎈', '🎂', '🥳', '🧁', '🕯️', '🎉'];
+
+        function createFloatingEmoji() {
+            const emoji = document.createElement('span');
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.classList.add('floating-emoji');
+            
+            // Thiết lập style ngẫu nhiên
+            emoji.style.left = Math.random() * 100 + 'vw';
+            emoji.style.position = 'absolute';
+            emoji.style.bottom = '-50px';
+            emoji.style.fontSize = (Math.random() * 20 + 24) + 'px';
+            emoji.style.animation = 'flyUp 5s ease-in forwards';
+
+            document.body.appendChild(emoji);
+
+            // Xóa emoji sau khi animation xong
+            setTimeout(() => {
+            emoji.remove();
+            }, 5000);
+        }
+
+        // Tạo liên tục emoji sau mỗi 500ms
+        setInterval(createFloatingEmoji, 400);
+    </script>
 </body>
 </html>

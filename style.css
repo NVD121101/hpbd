@@ -28,8 +28,9 @@ body {
     flex-direction: column;
     margin-top: 70px;
 }
+
 .greeting-card h1 {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .greeting-card img {
@@ -43,71 +44,175 @@ body {
   transform: scale(1.2); 
 }
 
-
 .gradient-text span{
   font-weight: bold;
-  background: linear-gradient(45deg, #FDBB2D, #22C1C3); /* màu chuyển sắc */
+  background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* CSS */
-.button-87 {
-  margin: 10px;
-  padding: 10px 35px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
-  border: 0px;
-  font-weight: 700;
-  box-shadow: 0px 0px 14px -7px #f09819;
-  background-image: linear-gradient(45deg, #FF512F 0%, #22C1C3  51%, #FDBB2D  100%);
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
 
-.button-87:hover {
-  background-position: right center;
-  color: #fff;  
-  text-decoration: none;
-}
+@media (max-width: 768px) {
+  .greeting-card {
+    margin-top: 200px;
+    padding: 10px;
+  }
 
-.button-87:active {
-  transform: scale(0.95);
-}
+  .greeting-card img {
+    width: 70px;
+    height: 70px;
+  }
 
+  .greeting-card h1 {
+    text-align: center;
+    font-size: 1.4em;
+  }
+}
 
 /* main */
 .lettre {
-  width: 700px;
-  height: 350px;
+  width: 1000px;
+  height: 500px;
   display: flex;  
   flex-direction: column;
   align-items: center;
   color: white;
   font-family: 'Pacifico', cursive;
   border-radius: 20px;
+  font-weight: 700;
   background-color: #FDB9B4;
+  animation: fadeInUp 5s ease forwards;
+  z-index: 100;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 .lettre .title{
-  font-size: 1.3em;
+  font-size: 1.2em;
   margin-top: 30px;
 }
+
+.lettre .title span {
+  opacity: 0;
+  display: inline-block;
+  animation: showUp 0.5s ease forwards;
+}
+
+.lettre .title h1 span:nth-child(1) { animation-delay: 1s; }
+.lettre .title h1 span:nth-child(2) { animation-delay: 1.3s; }
+.lettre .title h1 span:nth-child(3) { animation-delay: 1.6s; }
+.lettre .title h1 span:nth-child(4) { animation-delay: 1.9s; }
+.lettre .title h1 span:nth-child(5) { animation-delay: 2.2s; }
+.lettre .title h1 span:nth-child(6) { animation-delay: 2.5s; }
 
 .lettre .description {
   width: 100%;
   font-size: 1.1em;
-  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 10px;
+
+}
+
+.lettre .description span {
+  opacity: 0;
+  animation: showUp 0.5s ease forwards;
+}
+
+.lettre .description span:nth-child(1) {
+  animation-delay: 3s;
+}
+
+.lettre .description span:nth-child(2) {
+animation-delay: 4s;
+}
+
+.lettre .description span:nth-child(3) {
+animation-delay: 5s;
+}
+
+.lettre .description span:nth-child(4) {
+animation-delay: 6s;
+}
+
+@keyframes showUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lettre .description img{
+  width: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
+  transition: all 0.5s ease;
+  animation: showImg 0.5s ease forwards;
+  animation-delay: 7s;
+}
+
+.emoji {
+  position: absolute;
+  bottom: -150px;
+}
+
+.emoji span {
+  position: absolute;
+  font-size: 50px;
+  animation: flyUp 5s ease-in infinite;
+  opacity: 0;
+}
+
+@keyframes flyUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+@keyframes showImg {
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 700px
+  }
+}
+
+
+@media (max-width: 768px) {
+  .lettre {
+    width: 350px;
+    height: 400px;
+  }
+  .lettre .title{
+    font-size: 11px;
+  }
+  .lettre .description {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    white-space: normal; 
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+  }
 }
