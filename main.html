@@ -35,9 +35,10 @@
         <span>🕯️</span>
         <span>🎉</span>
     </div>
-    <audio id="birthdayMusic" src="./assets/hpbd.mp3" loop autoplay></audio>
+    <audio id="birthdayMusic" src="./assets/hpbd.mp3" loop></audio>
 
     <script>
+        document.getElementById('birthdayMusic').play();
         const emojis = ['🩷', '🎈', '🎂', '🥳', '🧁', '🕯️', '🎉'];
 
         function createFloatingEmoji() {
