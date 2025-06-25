@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="/assets/vy.jpg" type="image/x-icon">
 </head>
 <body>
     <div class="lettre">
@@ -36,9 +37,24 @@
         <span>🎉</span>
     </div>
     <audio id="birthdayMusic" src="./assets/hpbd.mp3" loop></audio>
+    <button id="playMusicBtn" style="position:fixed;bottom:30px;right:30px;z-index:9999;padding:16px 28px;font-size:18px;background:#ff69b4;color:#fff;border:none;border-radius:8px;box-shadow:0 2px 8px #0002;cursor:pointer;">Lên nhạc 🎵</button>
 
     <script>
-        document.getElementById('birthdayMusic').play();
+        const music = document.getElementById('birthdayMusic');
+        const playBtn = document.getElementById('playMusicBtn');
+        let musicStarted = false;
+
+        function startMusic() {
+            if (!musicStarted) {
+                music.play();
+                playBtn.style.display = 'none';
+                musicStarted = true;
+            }
+        }
+
+        playBtn.addEventListener('click', startMusic);
+        // Cho phép phát nhạc khi người dùng nhấn vào bất kỳ đâu trên trang (chỉ lần đầu)
+        document.body.addEventListener('click', startMusic, { once: true });
         const emojis = ['🩷', '🎈', '🎂', '🥳', '🧁', '🕯️', '🎉'];
 
         function createFloatingEmoji() {
